@@ -76,6 +76,8 @@ export const useCartStore = create((set, get) => ({
       }),
     })),
 
+  clearCart: () => set({ items: [] }),
+
   subtotal: () =>
     get().items.reduce(
       (sum, item) => sum + Number(item.product?.price ?? 0) * Number(item.quantity ?? 0),

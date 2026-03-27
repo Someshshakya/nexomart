@@ -8,6 +8,7 @@ import ProductsPage from './pages/ProductsPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import RegisterPage from './pages/RegisterPage'
 import CartPage from './pages/CartPage'
+import CheckoutPage from './pages/CheckoutPage'
 
 function PagePlaceholder({ title }) {
   return (
@@ -39,11 +40,13 @@ export default function App() {
             <Route path="products/:id" element={<ProductDetailPage />} />
             <Route path="vendors" element={<PagePlaceholder title="Vendors" />} />
             <Route path="cart" element={<CartPage />} />
+            <Route path="checkout" element={<CheckoutPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="dashboard" element={<PagePlaceholder title="Dashboard" />} />
             <Route path="register/vendor" element={<PagePlaceholder title="Become a vendor" />} />
             <Route path="help/vendors" element={<PagePlaceholder title="Vendor help" />} />
+            <Route path="orders/:id" element={<PagePlaceholder title="Order Tracking" />} />
           </Route>
 
           <Route path="vendor" element={<VendorLayout />}>
