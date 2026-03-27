@@ -15,6 +15,7 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import RegisterPage from './pages/RegisterPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
+import { ToastProvider } from './components/ui'
 
 function PagePlaceholder({ title }) {
   return (
@@ -38,8 +39,9 @@ function PagePlaceholder({ title }) {
 export default function App() {
   return (
     <div className="app-shell">
-      <BrowserRouter>
-        <Routes>
+      <ToastProvider>
+        <BrowserRouter>
+          <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="products" element={<ProductsPage />} />
@@ -96,8 +98,9 @@ export default function App() {
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
     </div>
   )
 }
