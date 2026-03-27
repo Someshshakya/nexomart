@@ -1,0 +1,287 @@
+.product-detail-page {
+  padding: 1.25rem 0 2rem;
+}
+
+.product-detail-layout {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .product-detail-layout {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+
+.pd-gallery-main {
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: #fff;
+  height: 26rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+}
+
+.pd-gallery-main:hover img {
+  transform: scale(1.06);
+}
+
+.pd-fallback {
+  font-size: 3rem;
+}
+
+.pd-thumbs {
+  margin-top: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.pd-thumb {
+  border: 1px solid var(--color-border);
+  border-radius: 0.55rem;
+  height: 4.8rem;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+}
+
+.pd-thumb.active {
+  border-color: var(--color-accent);
+}
+
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-vendor-link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.pd-title {
+  margin: 0.25rem 0 0.35rem;
+  font-family: var(--heading);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  color: var(--color-text);
+}
+
+.pd-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.pd-rating-stars {
+  color: #f59e0b;
+}
+
+.pd-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pd-price {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.pd-original {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.pd-discount {
+  background: rgba(2, 122, 72, 0.12);
+  color: #027a48;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.pd-stock {
+  display: inline-block;
+  margin-top: 0.55rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.pd-stock.in { background: rgba(2, 122, 72, 0.12); color: #027a48; }
+.pd-stock.low { background: rgba(245, 158, 11, 0.18); color: #b45309; }
+.pd-stock.out { background: rgba(180, 35, 24, 0.14); color: #b42318; }
+
+.pd-features {
+  margin: 0.9rem 0;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pd-feature-pill {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  background: #fff;
+  font-size: 0.8rem;
+}
+
+.pd-actions {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.pd-qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 0.55rem;
+  overflow: hidden;
+}
+
+.pd-qty button {
+  border: none;
+  background: #fff;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.pd-qty span {
+  width: 2.2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pd-cta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.pd-btn {
+  border-radius: 0.55rem;
+  padding: 0.65rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pd-btn.outline {
+  border: 1px solid var(--color-primary);
+  background: #fff;
+  color: var(--color-primary);
+}
+
+.pd-btn.solid {
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.pd-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pd-delivery {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.pd-tabs {
+  margin-top: 1.1rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+  padding: 0.9rem;
+}
+
+.pd-tab-head {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.pd-tab-btn {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pd-tab-btn.active {
+  border-color: var(--color-accent);
+  background: rgba(255, 107, 43, 0.12);
+}
+
+.pd-review {
+  border-bottom: 1px dashed var(--color-border);
+  padding: 0.6rem 0;
+}
+
+.pd-review:last-child {
+  border-bottom: none;
+}
+
+.pd-review-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.pd-avatar {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: var(--color-bg);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.pd-vendor-card {
+  border: 1px solid var(--color-border);
+  border-radius: 0.7rem;
+  padding: 0.8rem;
+  background: #fff;
+}
+
+.pd-toast {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 120;
+  background: #111827;
+  color: #fff;
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+}

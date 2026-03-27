@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout'
 import VendorLayout from './components/layout/VendorLayout'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
+import ProductDetailPage from './pages/ProductDetailPage'
 
 function PagePlaceholder({ title }) {
   return (
@@ -32,7 +33,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="products" element={<ProductsPage />} />
-            <Route path="products/:id" element={<PagePlaceholder title="Product Details" />} />
+            <Route path="products/:id" element={<ProductDetailPage />} />
             <Route path="vendors" element={<PagePlaceholder title="Vendors" />} />
             <Route path="cart" element={<PagePlaceholder title="Cart" />} />
             <Route path="login" element={<PagePlaceholder title="Login" />} />
