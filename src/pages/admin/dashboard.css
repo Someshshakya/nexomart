@@ -1,0 +1,161 @@
+.admin-dashboard {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.ad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.ad-actions {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.ad-actions select,
+.ad-btn {
+  border: 1px solid var(--color-border);
+  border-radius: 0.55rem;
+  background: #fff;
+  padding: 0.45rem 0.65rem;
+  font-weight: 700;
+}
+
+.ad-btn {
+  cursor: pointer;
+}
+
+.ad-grid4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 740px) {
+  .ad-grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .ad-grid4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.ad-stat {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.85rem;
+  padding: 1rem;
+}
+
+.ad-stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.ad-stat-value {
+  margin-top: 0.25rem;
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.ad-stat-meta {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: #027a48;
+}
+
+.ad-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.85rem;
+  padding: 0.85rem;
+}
+
+.ad-tabs {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.ad-tab {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.22rem 0.58rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.ad-tab.active {
+  border-color: var(--color-accent);
+  background: rgba(232, 57, 14, 0.12);
+}
+
+.ad-table-wrap {
+  overflow-x: auto;
+}
+
+.ad-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ad-table th,
+.ad-table td {
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  padding: 0.5rem 0.4rem;
+  font-size: 0.88rem;
+}
+
+.ad-chip {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.15rem 0.48rem;
+  font-size: 0.75rem;
+  background: #fff;
+}
+
+.ad-btn.green {
+  color: #027a48;
+  border-color: rgba(2, 122, 72, 0.35);
+}
+
+.ad-btn.red {
+  color: #b42318;
+  border-color: rgba(180, 35, 24, 0.35);
+}
+
+.ad-btn.warn {
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.35);
+}
+
+.ad-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 13, 12, 0.45);
+  z-index: 120;
+}
+
+.ad-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 121;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  width: min(90vw, 28rem);
+  padding: 1rem;
+}

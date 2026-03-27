@@ -6,6 +6,7 @@ import VendorLayout from './components/layout/VendorLayout'
 import CustomerDashboard from './pages/CustomerDashboard'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
+import AdminDashboardPage from './pages/admin/Dashboard'
 import VendorAddProductPage from './pages/vendor/AddProductPage'
 import VendorDashboardPage from './pages/vendor/Dashboard'
 import VendorProductsPage from './pages/vendor/Products'
@@ -79,8 +80,15 @@ export default function App() {
             <Route path="settings" element={<PagePlaceholder title="Vendor settings" />} />
           </Route>
 
-          <Route path="admin" element={<AdminLayout />}>
-            <Route index element={<PagePlaceholder title="Admin dashboard" />} />
+          <Route
+            path="admin"
+            element={
+              <ProtectedRoute role="admin">
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<AdminDashboardPage />} />
             <Route path="products" element={<PagePlaceholder title="Admin products" />} />
             <Route path="orders" element={<PagePlaceholder title="Admin orders" />} />
             <Route path="earnings" element={<PagePlaceholder title="Admin earnings" />} />
