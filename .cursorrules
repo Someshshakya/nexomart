@@ -1,0 +1,166 @@
+# Nexomart Frontend Cursor Rules
+
+You are building nexomart — a multi-vendor e-commerce React frontend.
+
+--------------------------------------------------
+
+TECH STACK
+- React 18 + Vite
+- React Router v6
+- Tailwind CSS v3
+- Axios
+- Zustand
+- React Query
+- React Hook Form
+
+--------------------------------------------------
+
+DESIGN SYSTEM
+
+FONTS
+- Headings / Display → Syne
+- Body → DM Sans
+
+COLORS (MANDATORY - defined in src/index.css)
+
+:root {
+  --color-primary:    #0F1F3D;
+  --color-accent:     #FF6B2B;
+  --color-secondary:  #1A3260;
+  --color-bg:         #F5F7FA;
+  --color-surface:    #FFFFFF;
+  --color-text:       #0F1F3D;
+  --color-text-muted: #8A9AB4;
+  --color-border:     #E4E8F0;
+}
+
+--------------------------------------------------
+
+TAILWIND CONFIG (REQUIRED)
+
+tailwind.config.js:
+
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        accent: 'var(--color-accent)',
+        secondary: 'var(--color-secondary)',
+        bg: 'var(--color-bg)',
+        surface: 'var(--color-surface)',
+        text: 'var(--color-text)',
+        muted: 'var(--color-text-muted)',
+        border: 'var(--color-border)',
+      },
+      fontFamily: {
+        heading: ['Syne', 'sans-serif'],
+        body: ['DM Sans', 'sans-serif'],
+      },
+    },
+  },
+};
+
+--------------------------------------------------
+
+FOLDER STRUCTURE
+
+/src
+  /pages
+  /components
+  /hooks
+  /store
+  /services
+  /context
+
+--------------------------------------------------
+
+API RULES
+
+- Base URL:
+  import.meta.env.VITE_API_URL
+
+- Never hardcode URLs
+- Always use /services layer
+- Axios only inside services
+
+--------------------------------------------------
+
+COMPONENT RULES
+
+- Always write complete working JSX
+- No TODOs or placeholders
+- Export default components
+- Mobile-first responsive design
+- No inline styles (Tailwind only)
+
+--------------------------------------------------
+
+DATA HANDLING
+
+- Use React Query for API calls
+- Use Zustand for global state
+
+Always handle:
+- Loading → spinner or skeleton
+- Error → proper UI message
+
+--------------------------------------------------
+
+FORMS
+
+- Use React Hook Form
+- Add validation
+- Show error messages
+
+--------------------------------------------------
+
+UI GUIDELINES
+
+Use classes like:
+
+- bg-primary text-white
+- bg-accent text-white
+- bg-secondary
+- bg-bg
+- bg-surface
+- text-primary
+- text-muted
+- border-border
+
+--------------------------------------------------
+
+EXAMPLE BUTTON
+
+<button className="bg-accent hover:bg-secondary text-white px-4 py-2 rounded-lg font-medium transition">
+  Add to Cart
+</button>
+
+--------------------------------------------------
+
+EXAMPLE CARD
+
+<div className="bg-surface border border-border rounded-xl p-4 shadow-sm">
+  <h2 className="font-heading text-lg text-primary">Product Name</h2>
+  <p className="text-muted text-sm">Description</p>
+</div>
+
+--------------------------------------------------
+
+STRICT RULES
+
+- No inline CSS
+- No axios in components
+- No hardcoded API URLs
+- No non-responsive layouts
+
+--------------------------------------------------
+
+SUMMARY
+
+- Navy + Orange modern ecommerce UI
+- Clean architecture
+- Scalable structure
+- Strict frontend discipline
+
+--------------------------------------------------
