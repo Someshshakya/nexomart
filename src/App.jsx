@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import RegisterPage from './pages/RegisterPage'
+import CartPage from './pages/CartPage'
 
 function PagePlaceholder({ title }) {
   return (
@@ -37,7 +38,7 @@ export default function App() {
             <Route path="products" element={<ProductsPage />} />
             <Route path="products/:id" element={<ProductDetailPage />} />
             <Route path="vendors" element={<PagePlaceholder title="Vendors" />} />
-            <Route path="cart" element={<PagePlaceholder title="Cart" />} />
+            <Route path="cart" element={<CartPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="dashboard" element={<PagePlaceholder title="Dashboard" />} />
