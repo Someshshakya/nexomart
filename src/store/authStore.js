@@ -7,9 +7,13 @@ import { create } from 'zustand'
 export const useAuthStore = create((set) => ({
   /** @type {AuthUser | null} */
   user: null,
+  token: null,
 
   /** @param {AuthUser | null} user */
   setUser: (user) => set({ user }),
 
-  logout: () => set({ user: null }),
+  /** @param {AuthUser} user @param {string} token */
+  setAuth: (user, token) => set({ user, token }),
+
+  logout: () => set({ user: null, token: null }),
 }))

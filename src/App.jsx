@@ -3,8 +3,10 @@ import AdminLayout from './components/layout/AdminLayout'
 import Layout from './components/layout/Layout'
 import VendorLayout from './components/layout/VendorLayout'
 import HomePage from './pages/HomePage'
+import LoginPage from './pages/LoginPage'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetailPage from './pages/ProductDetailPage'
+import RegisterPage from './pages/RegisterPage'
 
 function PagePlaceholder({ title }) {
   return (
@@ -36,8 +38,8 @@ export default function App() {
             <Route path="products/:id" element={<ProductDetailPage />} />
             <Route path="vendors" element={<PagePlaceholder title="Vendors" />} />
             <Route path="cart" element={<PagePlaceholder title="Cart" />} />
-            <Route path="login" element={<PagePlaceholder title="Login" />} />
-            <Route path="register" element={<PagePlaceholder title="Register" />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="register" element={<RegisterPage />} />
             <Route path="dashboard" element={<PagePlaceholder title="Dashboard" />} />
             <Route path="register/vendor" element={<PagePlaceholder title="Become a vendor" />} />
             <Route path="help/vendors" element={<PagePlaceholder title="Vendor help" />} />
@@ -45,6 +47,7 @@ export default function App() {
 
           <Route path="vendor" element={<VendorLayout />}>
             <Route index element={<PagePlaceholder title="Vendor dashboard" />} />
+            <Route path="dashboard" element={<PagePlaceholder title="Vendor dashboard" />} />
             <Route path="products" element={<PagePlaceholder title="Vendor products" />} />
             <Route path="orders" element={<PagePlaceholder title="Vendor orders" />} />
             <Route path="earnings" element={<PagePlaceholder title="Earnings" />} />
