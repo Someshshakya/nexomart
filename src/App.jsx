@@ -1,7 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AdminLayout from './components/layout/AdminLayout'
+import ProtectedRoute from './components/auth/ProtectedRoute'
 import Layout from './components/layout/Layout'
 import VendorLayout from './components/layout/VendorLayout'
+import CustomerDashboard from './pages/CustomerDashboard'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import ProductsPage from './pages/ProductsPage'
@@ -43,7 +45,14 @@ export default function App() {
             <Route path="checkout" element={<CheckoutPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
-            <Route path="dashboard" element={<PagePlaceholder title="Dashboard" />} />
+            <Route
+              path="dashboard"
+              element={
+                <ProtectedRoute role="customer">
+                  <CustomerDashboard />
+                </ProtectedRoute>
+              }
+            />
             <Route path="register/vendor" element={<PagePlaceholder title="Become a vendor" />} />
             <Route path="help/vendors" element={<PagePlaceholder title="Vendor help" />} />
             <Route path="orders/:id" element={<PagePlaceholder title="Order Tracking" />} />
