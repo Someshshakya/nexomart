@@ -2,6 +2,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: 'p1',
     name: 'Wireless Earbuds Pro',
+    category: 'Electronics',
     price: 2499,
     originalPrice: 3499,
     images: [],
@@ -13,6 +14,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: 'p2',
     name: 'Smartwatch Active X',
+    category: 'Electronics',
     price: 3999,
     originalPrice: 4999,
     images: [],
@@ -24,6 +26,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: 'p3',
     name: 'Non-Stick Cookware Set',
+    category: 'Home',
     price: 2199,
     originalPrice: 2899,
     images: [],
@@ -35,6 +38,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: 'p4',
     name: 'Yoga Mat Premium Grip',
+    category: 'Sports',
     price: 899,
     originalPrice: 1199,
     images: [],
@@ -45,6 +49,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: 'p5',
     name: 'Hardcover Bestseller Bundle',
+    category: 'Books',
     price: 1499,
     originalPrice: 1999,
     images: [],
@@ -56,6 +61,7 @@ const FALLBACK_PRODUCTS = [
   {
     _id: 'p6',
     name: 'Organic Grocery Starter Pack',
+    category: 'Grocery',
     price: 999,
     originalPrice: 1299,
     images: [],

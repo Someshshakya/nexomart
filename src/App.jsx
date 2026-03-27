@@ -3,6 +3,7 @@ import AdminLayout from './components/layout/AdminLayout'
 import Layout from './components/layout/Layout'
 import VendorLayout from './components/layout/VendorLayout'
 import HomePage from './pages/HomePage'
+import ProductsPage from './pages/ProductsPage'
 
 function PagePlaceholder({ title }) {
   return (
@@ -30,7 +31,7 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="products" element={<PagePlaceholder title="Products" />} />
+            <Route path="products" element={<ProductsPage />} />
             <Route path="products/:id" element={<PagePlaceholder title="Product Details" />} />
             <Route path="vendors" element={<PagePlaceholder title="Vendors" />} />
             <Route path="cart" element={<PagePlaceholder title="Cart" />} />
