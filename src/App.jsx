@@ -6,6 +6,9 @@ import VendorLayout from './components/layout/VendorLayout'
 import CustomerDashboard from './pages/CustomerDashboard'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
+import VendorAddProductPage from './pages/vendor/AddProductPage'
+import VendorDashboardPage from './pages/vendor/Dashboard'
+import VendorProductsPage from './pages/vendor/Products'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import RegisterPage from './pages/RegisterPage'
@@ -58,10 +61,19 @@ export default function App() {
             <Route path="orders/:id" element={<PagePlaceholder title="Order Tracking" />} />
           </Route>
 
-          <Route path="vendor" element={<VendorLayout />}>
-            <Route index element={<PagePlaceholder title="Vendor dashboard" />} />
-            <Route path="dashboard" element={<PagePlaceholder title="Vendor dashboard" />} />
-            <Route path="products" element={<PagePlaceholder title="Vendor products" />} />
+          <Route
+            path="vendor"
+            element={
+              <ProtectedRoute role="vendor">
+                <VendorLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<VendorDashboardPage />} />
+            <Route path="dashboard" element={<VendorDashboardPage />} />
+            <Route path="products" element={<VendorProductsPage />} />
+            <Route path="products/new" element={<VendorAddProductPage />} />
+            <Route path="products/:id/edit" element={<VendorAddProductPage />} />
             <Route path="orders" element={<PagePlaceholder title="Vendor orders" />} />
             <Route path="earnings" element={<PagePlaceholder title="Earnings" />} />
             <Route path="settings" element={<PagePlaceholder title="Vendor settings" />} />
