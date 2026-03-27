@@ -91,3 +91,30 @@ export async function processCommissionPayouts() {
   if (!response || !response.ok) return { success: true }
   return response.json()
 }
+
+export async function getVendors(filters = {}) {
+  const params = new URLSearchParams()
+  Object.entries(filters).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') params.set(key, String(value))
+  })
+  const query = params.toString()
+  try {
+    const response = await fetch(`/admin/vendors${query ? `?${query}` : ''}`)
+    if (!response.ok) throw new Error('Failed vendors fetch')
+    const data = await response.json()
+    return Array.isArray(data) ? data : data?.vendors || []
+  } catch {
+    return fallbackStats.vendors
+  }
+}
+
+export async function getCommissions() {
+  try {
+    const response = await fetch('/admin/commissions')
+    if (!response.ok) throw new Error('Failed commissions fetch')
+    const data = await response.json()
+    return Array.isArray(data) ? data : data?.commissions || []
+  } catch {
+    return fallbackStats.payouts
+  }
+}

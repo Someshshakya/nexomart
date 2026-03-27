@@ -62,3 +62,16 @@ export async function getMyOrders() {
     ]
   }
 }
+
+export async function getOrder(id) {
+  if (!id) return null
+  try {
+    const response = await fetch(`/orders/${id}`)
+    if (!response.ok) throw new Error('Failed to fetch order')
+    const data = await response.json()
+    return data?.order || data
+  } catch {
+    const orders = await getMyOrders()
+    return orders.find((o) => String(o.id || o._id) === String(id)) || null
+  }
+}
